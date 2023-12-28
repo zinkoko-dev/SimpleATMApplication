@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "jMS3jQZ8Eyopmg0yvQVD2EmjPtF9M4MpoZq/U6DcYdE=",
+  "Source": "SimpleATMApplication",
+  "BasePath": "_content/SimpleATMApplication",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SimpleATMApplication\\wwwroot",
+      "Source": "SimpleATMApplication",
+      "ContentRoot": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\wwwroot\\",
+      "BasePath": "_content/SimpleATMApplication",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\obj\\Debug\\net7.0\\scopedcss\\bundle\\SimpleATMApplication.styles.css",
+      "SourceId": "SimpleATMApplication",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/SimpleATMApplication",
+      "RelativePath": "SimpleATMApplication.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\obj\\Debug\\net7.0\\scopedcss\\bundle\\SimpleATMApplication.styles.css"
+    },
+    {
+      "Identity": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\SimpleATMApplication.bundle.scp.css",
+      "SourceId": "SimpleATMApplication",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/SimpleATMApplication",
+      "RelativePath": "SimpleATMApplication.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\SimpleATMApplication.bundle.scp.css"
+    }
+  ]
+}
