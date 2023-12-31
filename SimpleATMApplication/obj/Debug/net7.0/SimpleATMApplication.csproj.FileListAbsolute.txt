@@ -28,3 +28,4 @@ D:\.NET\workspace\SimpleATMApplication\SimpleATMApplication\obj\Debug\net7.0\ref
 D:\.NET\workspace\SimpleATMApplication\SimpleATMApplication\obj\Debug\net7.0\SimpleATMApplication.pdb
 D:\.NET\workspace\SimpleATMApplication\SimpleATMApplication\obj\Debug\net7.0\SimpleATMApplication.genruntimeconfig.cache
 D:\.NET\workspace\SimpleATMApplication\SimpleATMApplication\obj\Debug\net7.0\ref\SimpleATMApplication.dll
+D:\.NET\workspace\SimpleATMApplication\SimpleATMApplication\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout-copy.cshtml.rz.scp.css

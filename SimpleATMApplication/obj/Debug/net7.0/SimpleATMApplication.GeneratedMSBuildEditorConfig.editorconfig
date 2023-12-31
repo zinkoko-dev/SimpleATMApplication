@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\.NET\workspace\SimpleATMApplication\SimpleATMApplication
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/.NET/workspace/SimpleATMApplication/SimpleATMApplication/Views/AtmAction/AtmActionIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRtQWN0aW9uXEF0bUFjdGlvbkluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/.NET/workspace/SimpleATMApplication/SimpleATMApplication/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -39,6 +43,10 @@ build_metadata.AdditionalFiles.CssScope =
 [D:/.NET/workspace/SimpleATMApplication/SimpleATMApplication/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[D:/.NET/workspace/SimpleATMApplication/SimpleATMApplication/Views/Shared/_Layout-copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQtY29weS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-zvqu5mlulu
 
 [D:/.NET/workspace/SimpleATMApplication/SimpleATMApplication/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
