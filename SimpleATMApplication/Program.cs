@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using SimpleATMApplication.EFDbContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AppDbContext>(opt =>
+{
+    string? connectionString = builder.Configuration.GetConnectionString("DbConnection");
+    opt.UseSqlServer(connectionString);
+});
 
 var app = builder.Build();
 
@@ -25,3 +33,4 @@ app.MapControllerRoute(
     pattern: "{controller=AtmAction}/{action=Index}/{id?}");
 
 app.Run();
+
