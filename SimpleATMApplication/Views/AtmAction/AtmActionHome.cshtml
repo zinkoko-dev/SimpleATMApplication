@@ -12,7 +12,7 @@
     </style>
 }
 
-<h3>Welcome @Model.FirstName</h3>
+<h4 class="mt-5 mb-5">Welcome!! @Context.Session.GetString("_AuthenticatedUserName");</h4>
 
 <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#depositModal">
     <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
@@ -43,28 +43,21 @@
 @section scripts
 {
     <script>
-        $(document).ready(function () {
-            $('#depositButton').click(function () {
-                let depositAmt = $('#depositAmount').val();
-                let data = {
-                    DepositAmt: depositAmt
-                };
-        
-                $.ajax({
-                    type: 'POST',
-                    url: '/atmaction/deposit',
-                    data: JSON.stringify(data),
-                    contentType: 'application/json',
-                    success: function (response) {
-                        console.log('Successful:', response);
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Error:', error);
-                    }
-                });
+        $('#depositButton').click(function() {
+              let depositValue = $('#depositAmount').val();
+              $.ajax({
+                url: '/atmaction/deposit',
+                method: 'POST',
+                data: {
+                  DepositAmt: depositValue
+                },
+                success: function(response) {
+                  console.log('Deposit successful:', response);
+                },
+                error: function(xhr, status, error) {
+                  console.error('Error:', error);
+                }
+              });
             });
-        });
-
     </script>
-
 }
