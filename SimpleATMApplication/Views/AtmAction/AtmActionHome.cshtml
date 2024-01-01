@@ -1,0 +1,70 @@
+﻿@model CardHolderDataModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section style
+{
+    <style>
+        .btn-custom {
+          font-size: 2rem;
+        }
+    </style>
+}
+
+<h3>Welcome @Model.FirstName</h3>
+
+<button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#depositModal">
+    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+</button>
+
+<!--Deposit Modal -->
+<div class="modal fade" id="depositModal" tabindex="-1" aria-labelledby="depositModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="depositModalLabel">Deposit</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="depositAmount" class="form-label mb-3">How much would you like to deposit</label>
+                    <input type="number" class="form-control" id="depositAmount" placeholder="Enter Amount">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="depositButton">Deposit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#depositButton').click(function () {
+                let depositAmt = $('#depositAmount').val();
+                let data = {
+                    DepositAmt: depositAmt
+                };
+        
+                $.ajax({
+                    type: 'POST',
+                    url: '/atmaction/deposit',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        console.log('Successful:', response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error:', error);
+                    }
+                });
+            });
+        });
+
+    </script>
+
+}
