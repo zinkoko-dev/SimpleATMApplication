@@ -17,6 +17,9 @@
 <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#depositModal">
     <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
 </button>
+<button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#withdrawModal">
+    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+</button>
 
 <!--Deposit Modal -->
 <div class="modal fade" id="depositModal" tabindex="-1" aria-labelledby="depositModalLabel" aria-hidden="true">
@@ -40,6 +43,28 @@
     </div>
 </div>
 
+<!--Withdraw Modal -->
+<div class="modal fade" id="withdrawModal" tabindex="-1" aria-labelledby="withdrawModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="withdrawModalLabel">Withdraw</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="withdrawAmount" class="form-label mb-3">How much would you like to withdraw</label>
+                    <input type="number" class="form-control" id="withdrawAmount" placeholder="Enter Amount">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="withdrawButton">Withdraw</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section scripts
 {
     <script>
@@ -58,6 +83,23 @@
                   console.error('Error:', error);
                 }
               });
-            });
+        });
+        
+        $('#withdrawButton').click(function() {
+                      let withdrawValue = $('#withdrawAmount').val();
+                      $.ajax({
+                        url: '/atmaction/withdraw',
+                        method: 'POST',
+                        data: {
+                          WithdrawAmt: withdrawValue
+                        },
+                        success: function(response) {
+                          console.log('Withdraw successful:', response);
+                        },
+                        error: function(xhr, status, error) {
+                          console.error('Error:', error);
+                        }
+                      });
+                });
     </script>
 }

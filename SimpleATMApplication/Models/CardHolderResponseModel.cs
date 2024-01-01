@@ -8,4 +8,5 @@ public class CardHolderResponseModel
     public string LastName { get; set; }
     public Decimal Balance { get; set; }
     public Decimal DepositAmt { get; set; }
+    public Decimal WithdrawAmt { get; set; }
 }
