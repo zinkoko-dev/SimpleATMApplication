@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\.NET\workspace\SimpleATMApplication\SimpleATMApplication
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/.NET/workspace/SimpleATMApplication/SimpleATMApplication/Views/AtmAction/AtmActionHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRtQWN0aW9uXEF0bUFjdGlvbkhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/.NET/workspace/SimpleATMApplication/SimpleATMApplication/Views/AtmAction/AtmActionIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRtQWN0aW9uXEF0bUFjdGlvbkluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
