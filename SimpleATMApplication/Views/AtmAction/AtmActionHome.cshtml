@@ -7,25 +7,32 @@
 {
     <style>
         .btn-custom {
-          font-size: 2rem;
+          font-size: 1.2rem;
+          background-color: #3072ee;
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+          border: none;
+          padding: 10px 30px;
+          color: white;
+          margin-left: 3px;
         }
     </style>
 }
 
-<h4 class="mt-5 mb-2">Welcome!! @Context.Session.GetString("_AuthenticatedUserName");</h4>
-<p class="mb-5">Please choose from one of the following options</p>
+<h4 class="mt-5 mb-2 fw-bold">Welcome!! @Context.Session.GetString("_AuthenticatedUserName");</h4>
+<p class="mb-5 fw-bold">Please choose from one of the following options</p>
 
-<button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#depositModal">
-    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+<button type="button" class="btn btn-custom fw-bold" data-bs-toggle="modal" data-bs-target="#depositModal">
+    @* <i class="fa-solid fa-money-bill-transfer fa-2xl"></i> *@
+    Deposit
 </button>
-<button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#withdrawModal">
-    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+<button type="button" class="btn btn-custom fw-bold" data-bs-toggle="modal" data-bs-target="#withdrawModal">
+    Withdraw
 </button>
-<button type="button" class="btn btn-custom" id="showBalanceButton">
-    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+<button type="button" class="btn btn-custom fw-bold" id="showBalanceButton">
+    Show Balance
 </button>
-<button type="button" class="btn btn-custom" id="exitButton">
-    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+<button type="button" class="btn btn-custom fw-bold" id="exitButton">
+    Exit
 </button>
 
 <!--Deposit Modal -->
@@ -122,5 +129,9 @@
               }
             });
           });
+        
+        $('#exitButton').click(function (){
+            window.location.href = '/atmaction/exit';
+        });
     </script>
 }

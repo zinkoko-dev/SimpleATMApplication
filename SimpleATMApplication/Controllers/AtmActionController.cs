@@ -145,4 +145,10 @@ public class AtmActionController : Controller
         decimal balance = cardHolder.Balance;
         return Ok(balance.ToString());
     }
+    
+    public IActionResult Exit()
+    {
+        HttpContext.Session.Clear();
+        return Redirect("/");
+    }
 }
