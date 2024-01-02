@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\SimpleATMApplication.bundle.scp.css"
     },
     {
+      "Id": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
       "Id": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\wwwroot\\theme\\assets\\css\\style.css",
       "PackagePath": "staticwebassets\\theme\\assets\\css\\style.css"
     },

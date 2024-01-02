@@ -65,18 +65,21 @@ public class AtmActionController : Controller
     {
         if (reqModel.DepositAmt <= 0)
         {
-            return BadRequest("Deposit amount should be greater than zero.");
+            MessageModel model = new MessageModel(false, "Deposit amount should be greater than zero.");
+            return Json(model);
         }
 
         if (!CheckAuthUserId())
         {
-            return BadRequest("User not found.");
+            MessageModel model = new MessageModel(false, "User not found.");
+            return Json(model);
         }
 
         var cardHolder = await _appDbContext.CardHolders.FirstOrDefaultAsync(x => x.Id == userId);
         if (cardHolder is null)
         {
-            return BadRequest("Card holder not found.");
+            MessageModel model = new MessageModel(false, "Card holder not found.");
+            return Json(model);
         }
 
         cardHolder.Balance += reqModel.DepositAmt;
@@ -84,11 +87,13 @@ public class AtmActionController : Controller
 
         if (saveResult > 0)
         {
-            return Ok("Deposit successful.");
+            MessageModel model = new MessageModel(true, "Deposit successful.");
+            return Json(model);
         }
         else
         {
-            return BadRequest("Failed to save deposit.");
+            MessageModel model = new MessageModel(false, "Failed to save deposit.");
+            return Json(model);
         }
     }
     
@@ -97,23 +102,27 @@ public class AtmActionController : Controller
     {
         if (reqModel.WithdrawAmt <= 0)
         {
-            return BadRequest("Withdraw amount should be greater than zero.");
+            MessageModel model = new MessageModel(false, "Withdraw amount should be greater than zero.");
+            return Json(model);
         }
         
         if (!CheckAuthUserId())
         {
-            return BadRequest("User not found.");
+            MessageModel model = new MessageModel(false, "User not found.");
+            return Json(model);
         }
 
         var cardHolder = await _appDbContext.CardHolders.FirstOrDefaultAsync(x => x.Id == userId);
         if (cardHolder is null)
         {
-            return BadRequest("Card holder not found.");
+            MessageModel model = new MessageModel(false, "Card holder not found.");
+            return Json(model);
         }
 
         if (reqModel.WithdrawAmt > cardHolder.Balance)
         {
-            return BadRequest("Not enough balance.");
+            MessageModel model = new MessageModel(false, "Not enough balance.");
+            return Json(model);
         }
 
         cardHolder.Balance -= reqModel.WithdrawAmt;
@@ -121,29 +130,35 @@ public class AtmActionController : Controller
 
         if (saveResult > 0)
         {
-            return Ok("Withdraw successful.");
+            MessageModel model = new MessageModel(true, "Withdraw successful.");
+            return Json(model);
         }
         else
         {
-            return BadRequest("Failed to save withdraw.");
+            MessageModel model = new MessageModel(false, "Failed to save withdraw.");
+            return Json(model);
         }
     }
 
     public async Task<IActionResult> ShowBalance()
     {
+        MessageModel model = new MessageModel();
         if (!CheckAuthUserId())
         {
-            return BadRequest("User not found.");
+            model = new MessageModel(false, "User not found.");
+            return Json(model);
         }
 
         var cardHolder = await _appDbContext.CardHolders.FirstOrDefaultAsync(x => x.Id == userId);
         if (cardHolder is null)
         {
-            return BadRequest("Card holder not found.");
+            model = new MessageModel(false, "Card holder not found.");
+            return Json(model);
         }
 
         decimal balance = cardHolder.Balance;
-        return Ok(balance.ToString());
+        model = new MessageModel(true, balance.ToString());
+        return Json(model);
     }
     
     public IActionResult Exit()

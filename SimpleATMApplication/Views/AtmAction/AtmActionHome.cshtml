@@ -91,9 +91,11 @@
                   DepositAmt: depositValue
                 },
                 success: function(response) {
+                    showMsg(response);
                   console.log('Deposit successful:', response);
                 },
                 error: function(xhr, status, error) {
+                    errorMessage("Failed to save deposit.");
                   console.error('Error:', error);
                 }
               });
@@ -108,9 +110,11 @@
                           WithdrawAmt: withdrawValue
                         },
                         success: function(response) {
+                    showMsg(response);
                           console.log('Withdraw successful:', response);
                         },
                         error: function(xhr, status, error) {
+                    errorMessage("Failed to save withdraw.");
                           console.error('Error:', error);
                         }
                       });
@@ -122,9 +126,11 @@
               method: 'GET',
               dataType: 'json',
               success: function(response) {
+                    showInfoMessage(response);
                 console.log('Balance:', response);
               },
               error: function(xhr, status, error) {
+                    errorMessage("Card holder not found.");
                 console.error('Error:', error);
               }
             });

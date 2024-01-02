@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5+xeaE3DzrLQdyaBXjhxRRP5Yk9DYXG2L0Odi2ech7o=",
+  "Hash": "xQi7NXIf+nKWAXHFjAH7ipSU3ICneAsJ9vQR19oMRZA=",
   "Source": "SimpleATMApplication",
   "BasePath": "_content/SimpleATMApplication",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\SimpleATMApplication.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\wwwroot\\js\\custom.js",
+      "SourceId": "SimpleATMApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\wwwroot\\",
+      "BasePath": "_content/SimpleATMApplication",
+      "RelativePath": "js/custom.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\custom.js"
     },
     {
       "Identity": "D:\\.NET\\workspace\\SimpleATMApplication\\SimpleATMApplication\\wwwroot\\theme\\assets\\css\\style.css",
