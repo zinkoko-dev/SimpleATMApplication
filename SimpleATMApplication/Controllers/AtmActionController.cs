@@ -128,4 +128,21 @@ public class AtmActionController : Controller
             return BadRequest("Failed to save withdraw.");
         }
     }
+
+    public async Task<IActionResult> ShowBalance()
+    {
+        if (!CheckAuthUserId())
+        {
+            return BadRequest("User not found.");
+        }
+
+        var cardHolder = await _appDbContext.CardHolders.FirstOrDefaultAsync(x => x.Id == userId);
+        if (cardHolder is null)
+        {
+            return BadRequest("Card holder not found.");
+        }
+
+        decimal balance = cardHolder.Balance;
+        return Ok(balance.ToString());
+    }
 }

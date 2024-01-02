@@ -12,12 +12,19 @@
     </style>
 }
 
-<h4 class="mt-5 mb-5">Welcome!! @Context.Session.GetString("_AuthenticatedUserName");</h4>
+<h4 class="mt-5 mb-2">Welcome!! @Context.Session.GetString("_AuthenticatedUserName");</h4>
+<p class="mb-5">Please choose from one of the following options</p>
 
 <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#depositModal">
     <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
 </button>
 <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#withdrawModal">
+    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+</button>
+<button type="button" class="btn btn-custom" id="showBalanceButton">
+    <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
+</button>
+<button type="button" class="btn btn-custom" id="exitButton">
     <i class="fa-solid fa-money-bill-transfer fa-2xl"></i>
 </button>
 
@@ -101,5 +108,19 @@
                         }
                       });
                 });
+        
+        $('#showBalanceButton').click(function() {
+            $.ajax({
+              url: '/atmaction/showbalance',
+              method: 'GET',
+              dataType: 'json',
+              success: function(response) {
+                console.log('Balance:', response);
+              },
+              error: function(xhr, status, error) {
+                console.error('Error:', error);
+              }
+            });
+          });
     </script>
 }
